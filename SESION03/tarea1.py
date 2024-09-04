@@ -7,8 +7,7 @@ Crear un menú para crear objetos y realizar las diversas operaciones referidas.
 
 '''
 import java.util.Scanner;
-import java.util.date;
-import java.util.date;
+
 
 
 public class CuentaBancaria {
@@ -20,6 +19,59 @@ private String NombreCliente;
 private String FechaApertura;
 private double saldo; 
 
+       public CuentaBancaria(){
+        
+        this.NumeroCta = "";
+        this.NumeroCliente = "";
+        this.FechaApertura = "";
+        this.saldo = 0.0;
+        
+        public CuentaBancaria (String NumeroCta, String NumeroCliente, String FechaApertura, double saldo){
+            
+            this.NumeroCta = NumeroCta;
+            this.NumeroCliente = NumeroCliente;
+            this.FechaApertura = FechaApertura;
+            setsaldo(saldo); 
+
+}
+        public String getNumeroCta(){
+            return NumeroCta;
+            
+        }
+        
+        public String getNumeroCliente(){
+            return NumeroCliente;
+            
+        }
+        public String getFechaApertura(){
+            return FechaApertura;
+        }
+        public double getsaldo(){
+            return saldo;
+            
+        }
+        
+        public void setNumeroCta (String NumeroCta){
+            this.NumeroCta = NumeroCta;
+            
+        }public void setNumeroCliente (String NumeroCliente){
+            this.NumeroCliente = NumeroCliente;
+            
+        }
+        public void setFechaApertura(String FechaApertura){
+            this.FechaApertura = FechaApertura;
+            
+        } 
+        public void setsaldo (double saldo){
+            this.saldo = saldo;
+            
+        }
+        
+        public void setsaldo (double saldo){
+            if (saldo >= 100000){
+                this.saldo = saldo;
+            }else {
+                System.out.println ()
 
 
  // }
