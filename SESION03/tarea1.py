@@ -6,5 +6,17 @@ Agregar metodos para aperturar cuentas, realizar consignaciones y retiros contro
 Crear un menú para crear objetos y realizar las diversas operaciones referidas.
 
 '''
-class CuentaBancaria:
+import java.util.Scanner;
+import java.util.date;
+import java.util.date;
+
+
+public class CuentaBancaria {
+
+  public static void main (String [] args){
+
   
+  }
+}
+
+
