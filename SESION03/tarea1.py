@@ -13,10 +13,16 @@ import java.util.date;
 
 public class CuentaBancaria {
 
-  public static void main (String [] args){
+ // public static void main (String [] args){
+// Atributos
+private int NumeroCta;
+private String NombreCliente;
+private String FechaApertura;
+private double saldo; 
 
-  
-  }
+
+
+ // }
 }
 
 
