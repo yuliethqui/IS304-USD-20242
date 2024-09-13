@@ -25,5 +25,17 @@ def ocultar_letras(palabra):
         if palabra_oculta[indice] != '_':
             palabra_oculta[indice] = '_'
             letras_a_ocultar -= 1
+  return ''.join(palabra_oculta)
+def descubrir_letras(palabra_original, palabra_oculta, letra):
+    resultado = list(palabra_oculta)
+
+    for i in range(len(palabra_original)):
+        if palabra_original[i] == letra:
+            resultado[i] = letra
+
+    return ''.join(resultado)
+
+
+
 
 
