@@ -34,6 +34,26 @@ def descubrir_letras(palabra_original, palabra_oculta, letra):
             resultado[i] = letra
 
     return ''.join(resultado)
+def jugar():
+    palabra_original = random.choice(PALABRAS)
+    palabra_oculta = ocultar_letras(palabra_original)
+    intentos_restantes = MAX_INTENTOS
+
+    print("¡Bienvenido al juego de adivinar palabras!")
+    
+    while intentos_restantes > 0:
+        print(f"\nPalabra a adivinar: {palabra_oculta}")
+        print(f"Intentos restantes: {intentos_restantes}")
+        entrada = input("Introduce una letra o la palabra completa: ")
+  if len(entrada) == 1:
+            letra = entrada
+            if letra in palabra_original:
+                palabra_oculta = descubrir_letras(palabra_original, palabra_oculta, letra)
+            else:
+                intentos_restantes -= 1
+                print(f"¡Fallaste! La letra '{letra}' no está en la palabra.")
+        
+
 
 
 
