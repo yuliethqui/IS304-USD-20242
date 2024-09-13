@@ -6,75 +6,38 @@ Agregar metodos para aperturar cuentas, realizar consignaciones y retiros contro
 Crear un menú para crear objetos y realizar las diversas operaciones referidas.
 
 '''
-import java.util.Scanner;
 
+class CuentaBancaria:
+    def __init__(self, numero_cta=None, nombre_cliente=None, fecha_apertura=None, saldo=0):
+        self.__numeroCta = numero_cta
+        self.__nombreCliente = nombre_cliente
+        self.__fechaApertura = fecha_apertura
+        self.__saldo = saldo
+    def get_numeroCta(self):
+        return self.__numeroCta
 
+    def set_numeroCta(self, numero_cta):
+        self.__numeroCta = numero_cta
 
-public class CuentaBancaria {
+    def get_nombreCliente(self):
+        return self.__nombreCliente
 
- // public static void main (String [] args){
-// Atributos
-private int NumeroCta;
-private String NombreCliente;
-private String FechaApertura;
-private double saldo; 
+    def set_nombreCliente(self, nombre_cliente):
+        self.__nombreCliente = nombre_cliente
 
-       public CuentaBancaria(){
-        
-        this.NumeroCta = "";
-        this.NumeroCliente = "";
-        this.FechaApertura = "";
-        this.saldo = 0.0;
-        
-        public CuentaBancaria (String NumeroCta, String NumeroCliente, String FechaApertura, double saldo){
-            
-            this.NumeroCta = NumeroCta;
-            this.NumeroCliente = NumeroCliente;
-            this.FechaApertura = FechaApertura;
-            setsaldo(saldo); 
+    def get_fechaApertura(self):
+        return self.__fechaApertura
 
-}
-        public String getNumeroCta(){
-            return NumeroCta;
-            
-        }
-        
-        public String getNumeroCliente(){
-            return NumeroCliente;
-            
-        }
-        public String getFechaApertura(){
-            return FechaApertura;
-        }
-        public double getsaldo(){
-            return saldo;
-            
-        }
-        
-        public void setNumeroCta (String NumeroCta){
-            this.NumeroCta = NumeroCta;
-            
-        }public void setNumeroCliente (String NumeroCliente){
-            this.NumeroCliente = NumeroCliente;
-            
-        }
-        public void setFechaApertura(String FechaApertura){
-            this.FechaApertura = FechaApertura;
-            
-        } 
-        public void setsaldo (double saldo){
-            this.saldo = saldo;
-            
-        }
-        
-        public void setsaldo (double saldo){
-            if (saldo >= 100000){
-                this.saldo = saldo;
-            }else {
-                System.out.println ()
+    def set_fechaApertura(self, fecha_apertura):
+        self.__fechaApertura = fecha_apertura
 
+    def get_saldo(self):
+        return self.__saldo
 
- // }
-}
+    def set_saldo(self, saldo):
+        if saldo >= 100000:
+            self.__saldo = saldo
+        else:
+            print("El saldo inicial debe ser de al menos 100,000 pesos.")
 
-
+ 
