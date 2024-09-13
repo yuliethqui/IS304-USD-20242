@@ -40,4 +40,21 @@ class CuentaBancaria:
         else:
             print("El saldo inicial debe ser de al menos 100,000 pesos.")
 
+def aperturar_cuenta(self, numero_cta, nombre_cliente, fecha_apertura, saldo_inicial):
+        if saldo_inicial < 100000:
+            print("El saldo inicial debe ser de al menos 100,000 pesos.")
+        else:
+            self.__numeroCta = numero_cta
+            self.__nombreCliente = nombre_cliente
+            self.__fechaApertura = fecha_apertura
+            self.__saldo = saldo_inicial
+            print(f"Cuenta {self.__numeroCta} a nombre de {self.__nombreCliente} creada exitosamente con saldo de {self.__saldo}.")
  
+def consignar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print(f"Consignación exitosa. Nuevo saldo: {self.__saldo}.")
+        else:
+            print("No se puede consignar un valor negativo o nulo.")
+
+    
