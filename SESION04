@@ -52,8 +52,26 @@ def jugar():
             else:
                 intentos_restantes -= 1
                 print(f"¡Fallaste! La letra '{letra}' no está en la palabra.")
-        
 
+elif len(entrada) == len(palabra_original):
+            if entrada == palabra_original:
+                print(f"¡Felicidades! Has adivinado la palabra: {palabra_original}")
+                return
+            else:
+                intentos_restantes -= 1
+                print("¡Fallaste! La palabra no es correcta.")
+        
+        else:
+            print("Entrada no válida.")
+
+ if palabra_oculta == palabra_original:
+            print(f"¡Felicidades! Has completado la palabra: {palabra_original}")
+            return
+
+    print(f"Lo siento, has perdido. La palabra era: {palabra_original}")
+
+if __name__ == "__main__":
+    jugar()
 
 
 
