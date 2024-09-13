@@ -16,3 +16,14 @@ import random
 PALABRAS = ["murcielago", "elefante", "jirafa", "computadora", "automovil"]
 MAX_INTENTOS = 6
 
+def ocultar_letras(palabra):
+    palabra_oculta = list(palabra)
+    letras_a_ocultar = int(len(palabra) * 0.4)
+
+    while letras_a_ocultar > 0:
+        indice = random.randint(0, len(palabra) - 1)
+        if palabra_oculta[indice] != '_':
+            palabra_oculta[indice] = '_'
+            letras_a_ocultar -= 1
+
+
