@@ -57,4 +57,62 @@ def consignar(self, valor):
         else:
             print("No se puede consignar un valor negativo o nulo.")
 
-    
+ def retirar(self, valor):
+        if valor > self.__saldo:
+            print("Fondos insuficientes para realizar el retiro.")
+        elif valor <= 0:
+            print("El valor a retirar debe ser mayor a 0.")
+        else:
+            self.__saldo -= valor
+            print(f"Retiro exitoso. Nuevo saldo: {self.__saldo}.")
+
+ def menu():
+    cuenta = None
+
+    while True:
+        print(" Menú Cuenta Bancaria ")
+        print("1. Aperturar cuenta")
+        print("2. Consignar")
+        print("3. Retirar")
+        print("4. Consultar saldo")
+        print("5. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            numero_cta = input("Ingrese el número de cuenta: ")
+            nombre_cliente = input("Ingrese el nombre del cliente: ")
+            fecha_apertura = input("Ingrese la fecha de apertura (dd/mm/aaaa): ")
+            saldo_inicial = float(input("Ingrese el saldo inicial (mínimo 100,000): "))
+            cuenta = CuentaBancaria()
+            cuenta.aperturar_cuenta(numero_cta, nombre_cliente, fecha_apertura, saldo_inicial)
+
+        elif opcion == "2":
+            if cuenta is None:
+                print("Primero debe aperturar una cuenta.")
+            else:
+                valor = float(input("Ingrese el valor a consignar: "))
+                cuenta.consignar(valor)
+
+        elif opcion == "3":
+            if cuenta is None:
+                print("Primero debe aperturar una cuenta.")
+            else:
+                valor = float(input("Ingrese el valor a retirar: "))
+                cuenta.retirar(valor)
+
+        elif opcion == "4":
+            if cuenta is None:
+                print("Primero debe aperturar una cuenta.")
+            else:
+                print(f"Saldo actual: {cuenta.get_saldo()}")
+
+        elif opcion == "5":
+            print("Gracias por usar el sistema bancario. ¡Hasta luego!")
+            break
+
+        else:
+            print("Opción no válida. Intente de nuevo.")   
+
+if __name__ == "__main__":
+    menu()
