@@ -1,1 +1,41 @@
+'''
 
+                            Realizar un programa que permita llenar una lista, 
+                            mostrar la lista con los numeros primos menos o iguales 
+                            a un numero entero dado por el usuario utilice almenos una 
+                            clase que sea de encapsulamiento 
+'''
+
+class PrimeNumbers:
+    def __init__(self, limit):
+        self.limit = limit
+        self.prime_list = []
+
+    def is_prime(self, num):
+        if num < 2:
+            return False
+        for i in range(2, int(num**0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    def generate_primes(self):
+        for num in range(2, self.limit + 1):
+            if self.is_prime(num):
+                self.prime_list.append(num)
+
+    def display_primes(self):
+        print(f"Números primos menores o iguales a {self.limit}: {self.prime_list}")
+
+
+def main():
+    try:
+        user_input = int(input("Ingrese un número entero: "))
+        primes = PrimeNumbers(user_input)
+        primes.generate_primes()
+        primes.display_primes()
+    except ValueError:
+        print("Por favor, ingrese un número entero válido.")
+
+if __name__ == "__main__":
+    main()
